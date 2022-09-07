@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mvvm_Design_pattern_tutorial"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Tax Calculation" Height="300" Width="600">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Dictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        
+        <WrapPanel Style="{StaticResource SectionBigWrapPanel}" Background="Transparent">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Text="Tax Calculation" Style="{StaticResource SectionTitleWithBottomBorder}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Style="{StaticResource SectionStackPanel}">
+                    <Label Content="Total Income" />
+                    <TextBox Text="{Binding TotalIncome, Mode=TwoWay, StringFormat={}{0:C0}.00}" Style="{StaticResource TextBoxStyle}" />
+                </StackPanel>
+                <StackPanel Style="{StaticResource SectionStackPanel}">
+                    <Label Content="Exempted Income" />
+                    <TextBox Text="{Binding ExemptedIncome, Mode=TwoWay, StringFormat={}{0:C0}.00}" Style="{StaticResource TextBoxStyle}"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Style="{StaticResource SectionStackPanel}">
+                    <Label Content="Taxable Income" />
+                    <TextBox Text="{Binding TaxableIncome, Mode=TwoWay, StringFormat={}{0:C0}.00}" Style="{StaticResource TextBoxStyle}"/>
+                </StackPanel>
+                <StackPanel Style="{StaticResource SectionStackPanel}">
+                    <Label Content="Taxable Income" />
+                    <TextBox Text="{Binding PercentageOfTax, Mode=TwoWay, StringFormat={}{0}%}" Style="{StaticResource TextBoxStyle}"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Style="{StaticResource SectionStackPanel}">
+                    <Label Content="Tax on Income" />
+                    <TextBox Text="{Binding TaxOnIncome, Mode=TwoWay, StringFormat={}{0:C0}.00}" Style="{StaticResource TextBoxStyle}"/>
+                </StackPanel>
+            </StackPanel>
+        </WrapPanel> 
     </Grid>
 </Window>
