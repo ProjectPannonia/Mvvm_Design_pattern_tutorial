@@ -1,4 +1,16 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <WrapPanel x:Key="SectionBigWrapPanel"></WrapPanel>
+    <Style x:Key="SectionBigWrapPanel" TargetType="WrapPanel">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Background" Value="AliceBlue"/>
+    </Style>
+    <Style x:Key="SectionStackPanel" TargetType="StackPanel">
+        
+    </Style>
+    <Style x:Key="SectionTitleWithBottomBorder" TargetType="TextBlock">
+        
+    </Style>
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+        
+    </Style>
 </ResourceDictionary>
