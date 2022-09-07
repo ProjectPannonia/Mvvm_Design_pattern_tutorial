@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace Mvvm_Design_pattern_tutorial
 {
@@ -46,6 +41,10 @@ namespace Mvvm_Design_pattern_tutorial
             if(TaxableIncome > 0 && PercentageOfTax > 0)
                 TaxOnIncome = (PercentageOfTax * TaxableIncome) / 100;
         }
-
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void Changed(string Name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(Name));
+        }
     }
 }
